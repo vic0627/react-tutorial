@@ -4,13 +4,15 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { $$ } from "./composable";
 
-import CounterGroup from "./components/counter/CounterGroup"
+import Weather from './components/weather/Weather';
+import Counter from "./components/counter/Counter";
+import Test from "./tutorial/Test";
 
 const root = ReactDOM.createRoot($$("#root"));
 root.render(
-  <div>
-    <CounterGroup />
-  </div>
+  <>
+    <Test />
+  </>
 );
 
 reportWebVitals();

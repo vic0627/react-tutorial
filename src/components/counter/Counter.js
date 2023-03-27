@@ -1,4 +1,5 @@
 import "./Counter.css";
+import Board from "./Board";
 import React from "react";
 
 // React Hooks - useState
@@ -8,9 +9,9 @@ import React from "react";
 // 1. 從 React 取出 useState。
 const { useState } = React;
 
-const Counter = ({s}) => {
+const Counter = ({startNum = 0}) => {
   // 2. const [變數名稱, 修改變數值的方法] = useState(值)
-  const [count, setCount] = useState(s);
+  const [count, setCount] = useState(startNum);
 
   // 3. 定義欲綁定事件之函式，邏輯請見下方補充說明。
   const calc = (c) => () => c ? setCount(count + 1) : setCount(count - 1);
@@ -22,12 +23,13 @@ const Counter = ({s}) => {
         onClick={calc(false)}
         style={{ visibility: count <= -10 && "hidden" }}
       />
-      <div
+      {/* <div
         className='board'
         id='board'
       >
         {count}
-      </div>
+      </div> */}
+      <Board>{count}</Board>
       <div
         className='calc-btn'
         onClick={calc(true)} /* 綁定事件 */

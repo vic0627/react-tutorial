@@ -11,9 +11,13 @@ const CounterGroup = () => {
       {/* 2. 使用 map 來執行迴圈 */}
       {/* map() 會返回一個新的陣列，故用此方式返回一個都是 <Counter /> 的陣列 */}
       {counters.map((item => (
-        <Counter key={item} s={item} />
+        <Counter key={item} startNum={item} />
       )))}
     </div>
   );
 };
 export default CounterGroup;
+
+navigator.geolocation.getCurrentPosition((e) => {
+  console.log(e.coords.latitude, e.coords.longitude)
+})
