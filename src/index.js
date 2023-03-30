@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { $$ } from "./composable";
-
+import { GlobalContext } from "./components/global/GlobalPopup";
 // import Weather from "./components/weather/Weather";
 // import Counter from "./components/counter/Counter";
 // import Test from "./tutorial/Test";
@@ -13,7 +13,9 @@ import HooksUseMemo from "./components/hooksUseMemo/HooksUseMemo";
 const root = ReactDOM.createRoot($$("#root"));
 root.render(
   <>
-    <HooksUseMemo />
+    <GlobalContext.Provider value={GlobalContext}>
+      <HooksUseMemo />
+    </GlobalContext.Provider>
   </>
 );
 
