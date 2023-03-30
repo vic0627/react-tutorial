@@ -1,4 +1,4 @@
-{
+export const weather = {
   "coord": {
     "lon": 121.5974,
     "lat": 25.1055
