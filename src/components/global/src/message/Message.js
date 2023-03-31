@@ -1,15 +1,10 @@
-import React, { useEffect, useState, memo, useMemo } from "react";
+import React, { useEffect, useState, memo } from "react";
 import Item from "./Item";
 import { createPortal } from "react-dom";
 
 const Message = memo(({ obj }) => {
   const [list, setList] = useState([]);
   const [count, setcount] = useState(0);
-
-  const memo = useMemo(() => {
-    let temp = list;
-    return temp.filter(val => val);
-  }, [list]);
 
   const tranformType = (type) => {
     let transColor, transBg;
@@ -46,7 +41,7 @@ const Message = memo(({ obj }) => {
   return (
     <>
       {createPortal(
-        memo.map((item, idx) => (
+        list.map((item, idx) => (
           <Item
             bg={tranformType(item.type).transBg}
             color={tranformType(item.type).transColor}
