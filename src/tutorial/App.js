@@ -1,28 +1,61 @@
-import Btn from "./Btn";
-import ClassTutorial from "./ClassTutorial";
-import { $$ } from "../composable";
+import { Message } from "../components/global/GlobalContext";
+import { useState } from "react";
+const btnGroup = {
+  width: "100px",
+  height: "300px",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-around",
+};
 
-
-let i = 0;
-
-// props 只能從上而下做資訊傳遞，參數注意型別問題。
-// 要改變父層資料，可以將函式做為 props 向下傳遞。
-const App = (props) => {
-  const changeMessage = () => {
-    const c = props.color;
-    if (i === c.length - 1) {
-      i = 0;
-    } else {
-      i++;
-    }
-    $$("#show-message").innerHTML = c[i];
-  };
+const App = () => {
+  // const [title, setTitle] = useState("");
+  // const [type, setType] = useState("");
+  const [obj, setObj] = useState();
   return (
-    <div className="App">
-      <h2>{props.name.toString()}</h2>
-      <Btn handleClick={changeMessage}>設定文字</Btn> {/* props.children */}
-      <ClassTutorial>class</ClassTutorial>
-      <p id="show-message">{props.color[0]}</p>
+    <div className='App'>
+      {/* <input
+        type='text'
+        onInput={(e) => setTitle(e.target.value)}
+      ></input> */}
+      <div style={btnGroup}>
+        <button
+          onClick={() =>
+            setObj({ title: "Success bas been clicked", type: "success" })
+          }
+        >
+          Success
+        </button>
+        <button
+          onClick={() =>
+            setObj({ title: "Warning bas been clicked", type: "warning" })
+          }
+        >
+          Warning
+        </button>
+        <button
+          onClick={() =>
+            setObj({ title: "Danger bas been clicked", type: "danger" })
+          }
+        >
+          Danger
+        </button>
+        <button
+          onClick={() =>
+            setObj({ title: "Info bas been clicked", type: "info" })
+          }
+        >
+          Info
+        </button>
+        <button
+          onClick={() =>
+            setObj({ title: "Default bas been clicked", type: "default" })
+          }
+        >
+          default
+        </button>
+      </div>
+      <Message obj={obj} />
     </div>
   );
 };

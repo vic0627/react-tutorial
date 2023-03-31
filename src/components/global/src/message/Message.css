@@ -1,0 +1,46 @@
+.global-message {
+  min-width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 4px;
+  pointer-events: all;
+}
+
+.global-message>p {
+  margin: 0;
+  padding: 0;
+}
+
+.popping {
+  animation: pop .2s ease-in forwards;
+}
+
+.fading {
+  animation: fade .2s ease-in forwards;
+}
+
+@keyframes pop {
+  from {
+    margin: -32px auto 0;
+    opacity: 0;
+  }
+
+  to {
+    margin: 10px auto;
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    margin: 10px auto;
+    opacity: 1;
+  }
+
+  to {
+    margin: -32px auto 0;
+    opacity: 0;
+  }
+}
