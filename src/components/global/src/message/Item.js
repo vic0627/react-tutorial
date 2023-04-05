@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import "./Message.css";
-const Item = ({ children, color, bg, dur = 3000 }) => {
+const Item = ({ children, style, dur = 3000 }) => {
   let timer;
   const [messageAni, setMessageAni] = useState("popping");
   const [pop, setPop] = useState(true);
-  let style = { color, bg };
   useEffect(() => {
     (async () => {
       console.log("mounted");
@@ -29,11 +28,13 @@ const Item = ({ children, color, bg, dur = 3000 }) => {
   return (
     pop && (
       <div
-        id='global-message'
+        id="global-message"
         className={`global-message ${messageAni}`}
-        style={{ background: style.bg }}
+        style={{ background: style.transBg, borderColor: style.transColor }}
       >
-        <p style={{ color: style.color }}>{children}</p>
+        {<div className="global-message-icon"></div>}
+        <p style={{ color: style.transColor }}>{children}</p>
+        {<div className="global-message-close"></div>}
       </div>
     )
   );

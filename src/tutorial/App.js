@@ -21,35 +21,35 @@ const App = () => {
       <div style={btnGroup}>
         <button
           onClick={() =>
-            setObj({ title: "Success bas been clicked", type: "success" })
+            setObj({ title: "Success has been clicked", type: "success" })
           }
         >
           Success
         </button>
         <button
           onClick={() =>
-            setObj({ title: "Warning bas been clicked", type: "warning" })
+            setObj({ title: "Warning has been clicked", type: "warning" })
           }
         >
           Warning
         </button>
         <button
           onClick={() =>
-            setObj({ title: "Danger bas been clicked", type: "danger" })
+            setObj({ title: "Danger has been clicked", type: "danger" })
           }
         >
           Danger
         </button>
         <button
           onClick={() =>
-            setObj({ title: "Info bas been clicked", type: "info" })
+            setObj({ title: "Info has been clicked", type: "info" })
           }
         >
           Info
         </button>
         <button
           onClick={() =>
-            setObj({ title: "Default bas been clicked", type: "default" })
+            setObj({ title: "Default has been clicked", type: "default" })
           }
         >
           default

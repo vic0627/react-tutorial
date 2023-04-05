@@ -43,8 +43,7 @@ const Message = memo(({ obj }) => {
       {createPortal(
         list.map((item, idx) => (
           <Item
-            bg={tranformType(item.type).transBg}
-            color={tranformType(item.type).transColor}
+            style={tranformType(item.type)}
             key={idx}
           >
             {item.title}

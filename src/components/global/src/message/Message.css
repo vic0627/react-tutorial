@@ -1,29 +1,51 @@
 .global-message {
   min-width: 150px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 8px 12px;
   border-radius: 4px;
+  border: 1px solid;
   pointer-events: all;
+  margin: 0;
 }
-
+.global-message-icon, .global-message-close{
+  width: 12px;
+  height: 12px;
+}
+.global-message-close{
+  cursor: pointer;
+  position: relative;
+}
+.global-message-close::before, .global-message-close::after{
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #b1b3b8;
+  position: absolute;
+  top: calc(50% - 0.5px);
+  left: 0;
+  transform: rotate(45deg);
+}
+.global-message-close::after{
+  transform: rotate(-45deg);
+}
 .global-message>p {
   margin: 0;
-  padding: 0;
+  padding: 0 12px;
 }
 
 .popping {
-  animation: pop .2s ease-in forwards;
+  animation: pop .2s ease-in-out forwards;
 }
 
 .fading {
-  animation: fade .2s ease-in forwards;
+  animation: fade .2s ease-in-out forwards;
 }
 
 @keyframes pop {
   from {
-    margin: -32px auto 0;
+    margin: -34px auto 0;
     opacity: 0;
   }
 
@@ -40,7 +62,7 @@
   }
 
   to {
-    margin: -32px auto 0;
+    margin: -34px auto 0;
     opacity: 0;
   }
 }
