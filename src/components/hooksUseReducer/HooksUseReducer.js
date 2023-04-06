@@ -1,11 +1,6 @@
 import React from "react";
 const { useReducer } = React;
 const HooksUseReducer = ({username = "vic"}) => {
-  const initialState = {
-    name: "",
-    age: 0,
-    isMale: true,
-  };
   const createInitialState = (username) => {
     return {
       name: username,
