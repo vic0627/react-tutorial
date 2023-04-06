@@ -10,12 +10,12 @@ import App from "./tutorial/App";
 // import Test from "./tutorial/Test";
 // import HooksUseCallback from "./components/hooksUseCallback/HooksUseCallback";
 // import HooksUseMemo from "./components/hooksUseMemo/HooksUseMemo";
+import HooksUseReducer from "./components/hooksUseReducer/HooksUseReducer";
 
 const root = ReactDOM.createRoot($$("#root"));
 root.render(
   <>
-    <App />
-    <GlobalTest />
+    <HooksUseReducer />
   </>
 );
 

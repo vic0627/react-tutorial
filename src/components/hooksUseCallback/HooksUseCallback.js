@@ -38,7 +38,7 @@ const HooksUseCallback = () => {
         <h2>c</h2>
         <p>a會呼叫我、b會重組我</p>
         <p>{c}</p>
-        <button onClick={() => call("btn")}>btn c</button>
+        <button onClick={() => call(b)}>btn c</button>
       </div>
     </>
   );
