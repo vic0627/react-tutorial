@@ -1,40 +1,44 @@
 import { useEffect, useState } from "react";
 import "./Message.css";
-const Item = ({ children, style, dur = 3000 }) => {
-  let timer;
+const Item = ({ children, style, dur }) => {
   const [messageAni, setMessageAni] = useState("popping");
   const [pop, setPop] = useState(true);
   useEffect(() => {
     (async () => {
-      console.log("mounted");
-      await delayFn(dur, () => setMessageAni("fading"));
-      await delayFn(1000, () => {
+      await delayFn(() => setMessageAni("fading"), dur);
+      await delayFn(() => {
         setPop(false);
-        console.log("unmounted");
-      });
+      }, 200);
     })();
-    return () => {
-      clearTimeout(timer);
-    };
+    return () => {};
   }, []);
-  const delayFn = (time, fn) => {
+  const delayFn = (fn, time) => {
     return new Promise((resolve) => {
-      timer = setTimeout(() => {
+      const timer = setTimeout(() => {
         fn();
-        resolve();
+        resolve(clearTimeout(timer));
       }, time);
     });
+  };
+  const closeMessage = () => {
+    setMessageAni("fading");
+    delayFn(() => setPop(false), 200);
   };
   return (
     pop && (
       <div
-        id="global-message"
+        id='global-message'
         className={`global-message ${messageAni}`}
         style={{ background: style.transBg, borderColor: style.transColor }}
       >
-        {<div className="global-message-icon"></div>}
+        {<div className='global-message-icon'></div>}
         <p style={{ color: style.transColor }}>{children}</p>
-        {<div className="global-message-close"></div>}
+        {
+          <div
+            className='global-message-close'
+            onClick={closeMessage}
+          ></div>
+        }
       </div>
     )
   );

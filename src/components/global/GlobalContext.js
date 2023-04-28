@@ -1,10 +1,6 @@
-// import React from "react";
-
 import Message from "./src/message/Message";
 
-// export const GlobalContext = React.createContext(null);
 
-// GlobalContext.Message = Message;
 const style = {
   width: "100%",
   display: "flex",

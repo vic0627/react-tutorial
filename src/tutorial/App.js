@@ -9,47 +9,57 @@ const btnGroup = {
 };
 
 const App = () => {
-  // const [title, setTitle] = useState("");
-  // const [type, setType] = useState("");
   const [obj, setObj] = useState();
   return (
     <div className='App'>
-      {/* <input
-        type='text'
-        onInput={(e) => setTitle(e.target.value)}
-      ></input> */}
       <div style={btnGroup}>
         <button
           onClick={() =>
-            setObj({ title: "Success has been clicked", type: "success" })
+            setObj({
+              title: "Success has been clicked",
+              type: "success",
+              dur: 1000,
+            })
           }
         >
           Success
         </button>
         <button
           onClick={() =>
-            setObj({ title: "Warning has been clicked", type: "warning" })
+            setObj({
+              title: "Warning has been clicked",
+              type: "warning",
+              dur: 500,
+            })
           }
         >
           Warning
         </button>
         <button
           onClick={() =>
-            setObj({ title: "Danger has been clicked", type: "danger" })
+            setObj({
+              title: "Danger has been clicked",
+              type: "danger",
+              dur: 1500,
+            })
           }
         >
           Danger
         </button>
         <button
           onClick={() =>
-            setObj({ title: "Info has been clicked", type: "info" })
+            setObj({ title: "Info has been clicked", type: "info", dur: 800 })
           }
         >
           Info
         </button>
         <button
           onClick={() =>
-            setObj({ title: "Default has been clicked", type: "default" })
+            setObj({
+              title: "Default has been clicked",
+              type: "default",
+              dur: 200,
+            })
           }
         >
           default

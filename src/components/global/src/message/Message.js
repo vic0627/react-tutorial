@@ -1,5 +1,6 @@
 import React, { useEffect, useState, memo } from "react";
 import Item from "./Item";
+import { $$ } from "../../../../composable";
 import { createPortal } from "react-dom";
 
 const Message = memo(({ obj }) => {
@@ -45,11 +46,12 @@ const Message = memo(({ obj }) => {
           <Item
             style={tranformType(item.type)}
             key={idx}
+            dur={item.dur || 3000}
           >
             {item.title}
           </Item>
         )),
-        document.getElementById("global-protal") || document.body
+        $$("#global-protal") || document.body
       )}
     </>
   );

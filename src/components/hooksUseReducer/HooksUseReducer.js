@@ -24,19 +24,19 @@ const HooksUseReducer = ({username = "vic"}) => {
         throw new Error();
     }
   };
-  const [state, dispatch] = useReducer(reducer, username, createInitialState);
-
+  const [state, dispatch] = useReducer(reducer, "username", createInitialState);
+  const {name, age, isMale} = state
   return (
     <>
-      <p>Name: {state.name}</p>
+      <p>Name: {name}</p>
       <input
         type='text'
         onInput={(e) => dispatch({ type: "SET_NAME", payload: e.target.value })}
       ></input>
-      <p>Age: {state.age}</p>
+      <p>Age: {age}</p>
       <button onClick={() => dispatch({ type: "SET_AGE_DECREMENT" })}>-</button>
       <button onClick={() => dispatch({ type: "SET_AGE_INCREMENT" })}>+</button>
-      <p>isMale: {state.isMale.toString()}</p>
+      <p>isMale: {isMale.toString()}</p>
       <button onClick={() => dispatch({ type: "SET_IS_MALE" })}>
         change gender
       </button>

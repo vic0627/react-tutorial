@@ -4,18 +4,20 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { $$ } from "./composable";
 import { GlobalTest } from "./components/global/GlobalContext";
-import App from "./tutorial/App";
+// import App from "./tutorial/App";
 // import Weather from "./components/weather/Weather";
 // import Counter from "./components/counter/Counter";
 // import Test from "./tutorial/Test";
 // import HooksUseCallback from "./components/hooksUseCallback/HooksUseCallback";
 // import HooksUseMemo from "./components/hooksUseMemo/HooksUseMemo";
-import HooksUseReducer from "./components/hooksUseReducer/HooksUseReducer";
+// import HooksUseReducer from "./components/hooksUseReducer/HooksUseReducer";
+import HooksUseContext from "./components/hooksUseContext/HooksUseContext";
 
 const root = ReactDOM.createRoot($$("#root"));
 root.render(
   <>
-    <HooksUseReducer />
+    <HooksUseContext />
+    <GlobalTest />
   </>
 );
 
