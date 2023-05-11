@@ -1,5 +1,5 @@
 // import Parent from "./basic/Parent";
-import Parent from "./inter/Parent";
+import Parent from "./hard/Parent";
 
 const HooksUseContext = () => {
   return (
