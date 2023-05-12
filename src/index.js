@@ -11,12 +11,13 @@ import { GlobalTest } from "./components/global/GlobalContext";
 // import HooksUseCallback from "./components/hooksUseCallback/HooksUseCallback";
 // import HooksUseMemo from "./components/hooksUseMemo/HooksUseMemo";
 // import HooksUseReducer from "./components/hooksUseReducer/HooksUseReducer";
-import HooksUseContext from "./components/hooksUseContext/HooksUseContext";
+// import HooksUseContext from "./components/hooksUseContext/HooksUseContext";
+import HooksUseRef from "./components/hooksUseRef/HooksUseRef";
 
 const root = ReactDOM.createRoot($$("#root"));
 root.render(
   <>
-    <HooksUseContext />
+    <HooksUseRef />
     <GlobalTest />
   </>
 );

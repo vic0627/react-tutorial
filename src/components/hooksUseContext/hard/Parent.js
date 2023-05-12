@@ -1,11 +1,10 @@
-import { useContext } from "react";
-import { ThemeContext, ThemeProvider } from "./context";
-
+import { ThemeProvider } from "./context";
+import Child from "./Child";
 const Parent = () => {
-  const value = useContext(ThemeContext);
-  console.log(value)
   return (
-    <ThemeProvider />
+    <ThemeProvider>
+      <Child />
+    </ThemeProvider>
   );
 };
 export default Parent;
