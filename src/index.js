@@ -12,14 +12,15 @@ import { GlobalTest } from "./components/global/GlobalContext";
 // import HooksUseMemo from "./components/hooksUseMemo/HooksUseMemo";
 // import HooksUseReducer from "./components/hooksUseReducer/HooksUseReducer";
 // import HooksUseContext from "./components/hooksUseContext/HooksUseContext";
-import HooksUseRef from "./components/hooksUseRef/HooksUseRef";
+// import HooksUseRef from "./components/hooksUseRef/HooksUseRef";
+import TestApi from "./components/testApi/TestApi";
 
 const root = ReactDOM.createRoot($$("#root"));
 root.render(
-  <>
-    <HooksUseRef />
-    <GlobalTest />
-  </>
+    <>
+        <TestApi />
+        <GlobalTest />
+    </>
 );
 
 reportWebVitals();
