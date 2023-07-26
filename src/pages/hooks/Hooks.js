@@ -1,12 +1,12 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 
 const Hooks = () => {
+    const { hookName } = useParams();
+    console.log(hookName);
     return (
         <>
             <h2>hooks page</h2>
-            <section>
-                <Outlet />
-            </section>
+            <section>{hookName || <h2>nothing</h2>}</section>
         </>
     );
 };
