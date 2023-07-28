@@ -1,0 +1,43 @@
+.vic_select {
+    border: 1px solid var(--main);
+    display: inline-block;
+    position: relative;
+    padding: var(--padding);
+    min-width: 150px;
+}
+
+.vic_select__display {
+    margin: 0;
+}
+
+.vic_select__dropdown {
+    border: 1px solid var(--main);
+    background: var(--main-opposite);
+    /* outline: 1px solid red; */
+    width: calc(100% + 2px);
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: -1px;
+}
+
+.vic_select__options {
+    position: relative;
+    padding: var(--padding);
+    margin: 0;
+}
+
+.vic_select__display::after,
+.vic_select__options::after {
+    content: "";
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.vic_select__display:hover::after,
+.vic_select__options:hover::after {
+    border: 1px dashed var(--main);
+}

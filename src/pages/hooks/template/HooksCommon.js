@@ -1,4 +1,5 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment } from "react";
+import useRenderObject from "../../../composables/useRenderObject.js";
 import ConvertElement from "../../../components/convertElement/ConvertElement.js";
 
 const textPackage = {
@@ -13,30 +14,15 @@ const textPackage = {
 };
 
 const HooksCommon = ({ lang = "en", hookName }) => {
-    const [onload, setOnload] = useState(false);
+    const loadingObject = textPackage[lang][hookName];
 
-    const [article, setArticle] = useState([]);
+    const { onload, article } = useRenderObject({
+        lang,
+        hookName,
+        loadingObject,
+    });
 
-    let renderObject = textPackage[lang][hookName];
-
-    useEffect(() => {
-        if (!renderObject) return;
-
-        const render = async () => {
-            // eslint-disable-next-line react-hooks/exhaustive-deps
-            renderObject = await renderObject();
-
-            renderObject = await renderObject.default;
-
-            setArticle(renderObject);
-
-            setOnload(true);
-        };
-
-        render();
-    }, [lang, hookName]);
-
-    if (!renderObject) return <p>comming soon...</p>;
+    if (!loadingObject) return <p>comming soon...</p>;
 
     if (!onload) return <p>loading...</p>;
 
@@ -45,7 +31,10 @@ const HooksCommon = ({ lang = "en", hookName }) => {
             {article.map((section) =>
                 Object.entries(section).map(([key, value]) => (
                     <Fragment key={value}>
-                        <ConvertElement attr={key} value={value} />
+                        <ConvertElement
+                            attr={key}
+                            value={value}
+                        />
                     </Fragment>
                 ))
             )}

@@ -1,17 +1,10 @@
 import { createHashRouter, redirect } from "react-router-dom";
+import store from "../store";
 import Layout from "../pages/Layout";
 import Home from "../pages/home/Home";
 import Hooks from "../pages/hooks/Hooks";
-import HooksUseState from "../components/hooksUseState/HooksUseState";
-import HooksUseReducer from "../components/hooksUseReducer/HooksUseReducer";
-import HooksUseContext from "../components/hooksUseContext/HooksUseContext";
-import HooksUseRef from "../components/hooksUseRef/HooksUseRef";
-import HooksUseEffect from "../components/hooksUseEffect/HooksUseEffect";
-import HooksUseLayoutEffect from "../components/hooksUseLayoutEffect/HooksUseLayoutEffect";
-import HooksUseMemo from "../components/hooksUseMemo/HooksUseMemo";
-import HooksUseCallback from "../components/hooksUseCallback/HooksUseCallback";
-import HooksUseTransition from "../components/hooksUseTransition/HooksUseTransition";
-import HooksUseId from "../components/hooksUseId/HooksUseId";
+
+const { current } = store.getState().language;
 
 const routes = [
     {
@@ -20,21 +13,21 @@ const routes = [
         loader: async ({ request, params }) => {
             const { url } = request;
 
-            if (!url.endsWith("home")) return redirect("home");
+            if (!url.endsWith("home")) return redirect(`${current}/home`);
 
             return null;
         },
         children: [
             {
-                path: "home",
+                path: ":lang/home",
                 element: <Home />,
             },
             {
-                path: "hooks",
+                path: ":lang/hooks",
                 element: <Hooks />,
             },
             {
-                path: "hooks/:hookName",
+                path: ":lang/hooks/:hookName",
                 element: <Hooks />,
             },
         ],

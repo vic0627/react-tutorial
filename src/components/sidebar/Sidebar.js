@@ -1,30 +1,57 @@
 import { Link } from "react-router-dom";
-import menu from "./menu";
+import { useSelector } from "react-redux";
+import AbcSharpIcon from "@mui/icons-material/AbcSharp";
+import menu, { languageMenu } from "./menu";
+import store from "../../store";
+import { switchLang } from "../../store/slices/languageSlice";
+import VicSelect from "../common/vicSelect/VicSelect";
 
 const Sidebar = () => {
+    const lang = useSelector((state) => state.language.current);
+
+    const handleSelectLanguage = (e) => {
+        // const { value } = e.target;
+
+        store.dispatch({
+            type: switchLang.type,
+            payload: e,
+        });
+    };
+
     return (
         <aside>
-            {menu.map((parent) => {
+            <AbcSharpIcon />
+            {menu(lang).map((parent) => {
                 const { name, to, children } = parent;
 
                 return (
                     <div key={name}>
-                        <Link to={to}>{name}</Link>
-                        <ul>
-                            {children &&
-                                children.map((child) => {
+                        <div>
+                            <Link to={to}>{name}</Link>
+                        </div>
+                        {children && (
+                            <div>
+                                {children.map((child) => {
                                     const { name, to } = child;
 
                                     return (
-                                        <li key={name}>
+                                        <div key={name}>
                                             <Link to={to}>{name}</Link>
-                                        </li>
+                                        </div>
                                     );
                                 })}
-                        </ul>
+                            </div>
+                        )}
                     </div>
                 );
             })}
+            {/* <div>
+                <VicSelect
+                    defaultValue={lang}
+                    options={languageMenu}
+                    inputCallback={handleSelectLanguage}
+                />
+            </div> */}
         </aside>
     );
 };

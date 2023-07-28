@@ -1,54 +1,81 @@
-const menu = [
+const menu = (lang) => [
     {
-        name: "Learn React",
-        to: "/home",
+        name: (() => {
+            let name;
+
+            switch (lang) {
+                case "zh-TW":
+                    name = "學學 React";
+                    break;
+                case "en":
+                default:
+                    name = "Learn React";
+                    break;
+            }
+
+            return name;
+        })(),
+        to: `/${lang}/home`,
     },
     {
         name: "Hooks",
-        to: "/hooks/",
+        to: `/${lang}/hooks`,
         children: [
             {
                 name: "useState",
-                to: "/hooks/usestate",
+                to: `/${lang}/hooks/usestate`,
             },
             {
                 name: "useReducer",
-                to: "/hooks/usereducer",
+                to: `/${lang}/hooks/usereducer`,
             },
             {
                 name: "useContext",
-                to: "/hooks/usecontext",
+                to: `/${lang}/hooks/usecontext`,
             },
             {
                 name: "useRef",
-                to: "/hooks/useref",
+                to: `/${lang}/hooks/useref`,
             },
             {
                 name: "useEffect",
-                to: "/hooks/useeffect",
+                to: `/${lang}/hooks/useeffect`,
             },
             {
                 name: "useLayoutEffect",
-                to: "/hooks/uselayouteffect",
+                to: `/${lang}/hooks/uselayouteffect`,
             },
             {
                 name: "useMemo",
-                to: "/hooks/usememo",
+                to: `/${lang}/hooks/usememo`,
             },
             {
                 name: "useCallback",
-                to: "/hooks/usecallback",
+                to: `/${lang}/hooks/usecallback`,
             },
             {
                 name: "useTransition",
-                to: "/hooks/usetransition",
+                to: `/${lang}/hooks/usetransition`,
             },
             {
                 name: "useId",
-                to: "/hooks/useid",
+                to: `/${lang}/hooks/useid`,
             },
         ],
     },
 ];
 
 export default menu;
+
+export const languageMenu = [
+    {
+        innerText: "English",
+        value: "en",
+        disabled: false,
+    },
+    {
+        innerText: "繁體中文（臺灣）",
+        value: "zh-TW",
+        disabled: false,
+    },
+];
