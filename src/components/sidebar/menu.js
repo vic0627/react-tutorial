@@ -1,23 +1,5 @@
 const menu = (lang) => [
     {
-        name: (() => {
-            let name;
-
-            switch (lang) {
-                case "zh-TW":
-                    name = "學學 React";
-                    break;
-                case "en":
-                default:
-                    name = "Learn React";
-                    break;
-            }
-
-            return name;
-        })(),
-        to: `/${lang}/home`,
-    },
-    {
         name: "Hooks",
         to: `/${lang}/hooks`,
         children: [
@@ -66,16 +48,3 @@ const menu = (lang) => [
 ];
 
 export default menu;
-
-export const languageMenu = [
-    {
-        innerText: "English",
-        value: "en",
-        disabled: false,
-    },
-    {
-        innerText: "繁體中文（臺灣）",
-        value: "zh-TW",
-        disabled: false,
-    },
-];

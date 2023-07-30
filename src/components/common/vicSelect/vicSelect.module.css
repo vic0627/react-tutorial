@@ -1,5 +1,5 @@
 .vic_select {
-    border: 1px solid var(--main);
+    border: var(--border) solid var(--main);
     display: inline-block;
     position: relative;
     padding: var(--padding);
@@ -11,7 +11,7 @@
 }
 
 .vic_select__dropdown {
-    border: 1px solid var(--main);
+    border: var(--border) solid var(--main);
     background: var(--main-opposite);
     /* outline: 1px solid red; */
     width: calc(100% + 2px);

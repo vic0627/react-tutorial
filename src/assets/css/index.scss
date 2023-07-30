@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+    letter-spacing: 1px;
+}
+
+* {
+    box-sizing: border-box;
+    cursor: none;
+    transition: color 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+body {
+    font-family: "Saira Condensed", "Noto Serif TC", sans-serif, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+        "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --padding: 2px 4px;
+    --border: 2px;
+
+    --main: #000;
+    --main-opposite: #fff;
+
+    --blue: #409eff;
+    --blue-1: #ecf5ff;
+    --blue-2: #d9ecff;
+    --blue-3: #c6e2ff;
+    --blue-4: #a0cfff;
+    --blue-5: #79bbff;
+    --blue-6: #337ecc;
+
+    --green: #67c23a;
+    --green-1: #f0f9eb;
+    --green-2: #e1f3d8;
+    --green-3: #d1edc4;
+    --green-4: #b3e19d;
+    --green-5: #95d475;
+    --green-6: #529b2e;
+
+    --brown: #e6a23c;
+    --brown-1: #fdf6ec;
+    --brown-2: #faecd8;
+    --brown-3: #f8e3c5;
+    --brown-4: #f3d19e;
+    --brown-5: #eebe77;
+    --brown-6: #b88230;
+
+    --red: #f56c6c;
+    --red-1: #fef0f0;
+    --red-2: #fde2e2;
+    --red-3: #fcd3d3;
+    --red-4: #fab6b6;
+    --red-5: #f89898;
+    --red-6: #c45656;
+
+    --gray: #909399;
+    --gray-1: #f4f4f5;
+    --gray-2: #e9e9eb;
+    --gray-3: #dedfe0;
+    --gray-4: #c8c9cc;
+    --gray-5: #b1b3b8;
+    --gray-6: #73767a;
+
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-color: #000;
+        clip-path: ellipse(0% 0% at 0 0);
+        transition: clip-path 0.3s ease-in-out;
+    }
+
+    &.dark {
+        --main: #fff;
+        --main-opposite: #000;
+
+        --blue-6: #ecf5ff;
+        --blue-5: #d9ecff;
+        --blue-4: #c6e2ff;
+        --blue-3: #a0cfff;
+        --blue-2: #79bbff;
+        --blue-1: #337ecc;
+
+        --green-6: #f0f9eb;
+        --green-5: #e1f3d8;
+        --green-4: #d1edc4;
+        --green-3: #b3e19d;
+        --green-2: #95d475;
+        --green-1: #529b2e;
+
+        --brown-6: #fdf6ec;
+        --brown-5: #faecd8;
+        --brown-4: #f8e3c5;
+        --brown-3: #f3d19e;
+        --brown-2: #eebe77;
+        --brown-1: #b88230;
+
+        --red-6: #fef0f0;
+        --red-5: #fde2e2;
+        --red-4: #fcd3d3;
+        --red-3: #fab6b6;
+        --red-2: #f89898;
+        --red-1: #c45656;
+
+        --gray-6: #f4f4f5;
+        --gray-5: #e9e9eb;
+        --gray-4: #dedfe0;
+        --gray-3: #c8c9cc;
+        --gray-2: #b1b3b8;
+        --gray-1: #73767a;
+
+        &::before {
+            clip-path: ellipse(200% 200% at 100% 100%);
+        }
+    }
+}
+
+*::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--main-opposite);
+    /* border: 1px solid var(--main); */
+}
+
+*::-webkit-scrollbar-thumb {
+    background: var(--main);
+}
+
+*::selection {
+    background-color: var(--main);
+    color: var(--main-opposite);
+}
+
+code {
+    /* font-family: source-code-pro, Menlo,
+        Monaco, Consolas, "Courier New",
+        monospace;*/
+    letter-spacing: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+a,
+li {
+    color: var(--main);
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+p,
+div,
+a,
+li {
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main);
+    display: inline-block;
+    padding: var(--padding);
+    position: relative;
+
+    &::after {
+        content: "";
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+    &:hover::after {
+        border: 1px dashed var(--main);
+    }
+}
+
+ul,
+ol {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    padding-left: 1rem;
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 6px;
+        height: 1px;
+        background: var(--main);
+        position: absolute;
+        top: 0.75rem;
+        left: 0.25rem;
+    }
+}
+
+svg.MuiSvgIcon-root {
+    font-size: 32px;
+}

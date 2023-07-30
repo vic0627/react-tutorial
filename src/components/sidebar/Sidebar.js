@@ -1,26 +1,15 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import AbcSharpIcon from "@mui/icons-material/AbcSharp";
-import menu, { languageMenu } from "./menu";
-import store from "../../store";
-import { switchLang } from "../../store/slices/languageSlice";
-import VicSelect from "../common/vicSelect/VicSelect";
+import menu from "./menu";
+import styles from "./sidebar.module.scss";
 
 const Sidebar = () => {
     const lang = useSelector((state) => state.language.current);
 
-    const handleSelectLanguage = (e) => {
-        // const { value } = e.target;
-
-        store.dispatch({
-            type: switchLang.type,
-            payload: e,
-        });
-    };
+    const { sidebar } = styles;
 
     return (
-        <aside>
-            <AbcSharpIcon />
+        <aside className={sidebar}>
             {menu(lang).map((parent) => {
                 const { name, to, children } = parent;
 
@@ -45,13 +34,6 @@ const Sidebar = () => {
                     </div>
                 );
             })}
-            {/* <div>
-                <VicSelect
-                    defaultValue={lang}
-                    options={languageMenu}
-                    inputCallback={handleSelectLanguage}
-                />
-            </div> */}
         </aside>
     );
 };
