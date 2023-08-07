@@ -1,0 +1,43 @@
+[
+    {
+        "_id": 1,
+        "type": "Booster",
+        "phrase": "強化",
+        "boost": 5,
+        "resilience": 1,
+        "sideEffect": [],
+        "input": 1,
+        "output": 1
+    },
+    {
+        "_id": 2,
+        "type": "Compressor",
+        "phrase": "壓縮",
+        "ratio": 1.15,
+        "resilience": 1,
+        "sideEffect": [],
+        "input": 1,
+        "output": 1
+    },
+    {
+        "_id": 3,
+        "type": "Iterator",
+        "phrase": "連續",
+        "deration": 0.5,
+        "involution": 1,
+        "resilience": 5,
+        "sideEffect": [],
+        "input": 1,
+        "output": 1
+    },
+    {
+        "_id": 4,
+        "type": "Dispenser",
+        "phrase": "擴散",
+        "allocate": 2,
+        "resilience": 1,
+        "sideEffect": [],
+        "input": 1,
+        "output": 1
+    }
+]

@@ -3,6 +3,7 @@ import store from "../store";
 import Layout from "../pages/Layout";
 import Home from "../pages/home/Home";
 import Hooks from "../pages/hooks/Hooks";
+import SpellGame from "../pages/spellGame/SpellGame";
 
 const { current } = store.getState().language;
 
@@ -30,8 +31,13 @@ const routes = [
                 path: ":lang/hooks/:hookName",
                 element: <Hooks />,
             },
+            {
+                path: "/spell",
+                element: <SpellGame />,
+            },
         ],
     },
+    
 ];
 
 const router = createHashRouter(routes);

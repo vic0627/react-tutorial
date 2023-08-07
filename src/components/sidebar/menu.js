@@ -45,6 +45,10 @@ const menu = (lang) => [
             },
         ],
     },
+    {
+        name: "Spell Game",
+        to: "/spell",
+    },
 ];
 
 export default menu;

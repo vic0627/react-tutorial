@@ -2,12 +2,14 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Navigation from "../components/navigation/Navigation";
 import Sidebar from "../components/sidebar/Sidebar";
 import Pointer from "../components/pointer/Pointer";
-import Backing from "./backing/Backing";
+// import Backing from "./backing/Backing";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import styles from "./layout.module.scss";
+import io from "socket.io-client";
 
 const Layout = () => {
+    // const socket = io("http://localhost:3001");
     const location = useLocation();
 
     const navigate = useNavigate();
@@ -15,6 +17,9 @@ const Layout = () => {
     const lang = useSelector((state) => state.language.current);
 
     useEffect(() => {
+        fetch("http://localhost:3001/user/test", {
+            method: "GET",
+        });
         const { pathname } = location;
 
         const redirectURI = pathname.split("/");
@@ -26,7 +31,6 @@ const Layout = () => {
 
     return (
         <>
-            <Backing />
             <Navigation />
             <div className={styles.layout}>
                 <Sidebar />

@@ -1,0 +1,42 @@
+[
+    {
+        "_id": 1,
+        "element": "Aqua",
+        "type": "EnchantCore",
+        "phrase": "水阿!",
+        "tension": 10,
+        "sideEffect": [],
+        "input": 0,
+        "output": 1
+    },
+    {
+        "_id": 2,
+        "element": "Pyro",
+        "type": "EnchantCore",
+        "phrase": "火阿!",
+        "tension": 10,
+        "sideEffect": [],
+        "input": 0,
+        "output": 1
+    },
+    {
+        "_id": 3,
+        "element": "Nature",
+        "type": "EnchantCore",
+        "phrase": "大自然阿!",
+        "tension": 10,
+        "sideEffect": [],
+        "input": 0,
+        "output": 1
+    },
+    {
+        "_id": 4,
+        "element": "Chaos",
+        "type": "EnchantCore",
+        "phrase": "渾沌阿!",
+        "tension": 10,
+        "sideEffect": [],
+        "input": 0,
+        "output": 1
+    }
+]

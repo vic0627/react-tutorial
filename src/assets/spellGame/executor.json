@@ -1,0 +1,11 @@
+[
+    {
+        "_id": 1,
+        "type": "Executor",
+        "action": "Attack",
+        "phrase": "突襲!",
+        "sideEffect": [],
+        "input": 1,
+        "ouput": 0
+    }
+]
