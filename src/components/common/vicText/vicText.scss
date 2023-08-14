@@ -1,0 +1,25 @@
+.vic_text {
+    display: block;
+    min-width: 50px;
+    max-width: 167px;
+    outline: 1px solid red;
+
+    .vic_text__label {
+        outline: 1px solid red;
+        width: auto;
+    }
+
+    .vic_text__input {
+        display: block;
+        padding: var(--padding);
+        border: 2px solid var(--main);
+        outline: none;
+
+        &::placeholder {
+            color: var(--main);
+        }
+
+        &:focus {
+        }
+    }
+}

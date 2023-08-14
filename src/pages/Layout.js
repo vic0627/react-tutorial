@@ -17,9 +17,9 @@ const Layout = () => {
     const lang = useSelector((state) => state.language.current);
 
     useEffect(() => {
-        fetch("http://localhost:3001/user/test", {
-            method: "GET",
-        });
+        // fetch("http://localhost:3001/user/test", {
+        //     method: "GET",
+        // });
         const { pathname } = location;
 
         const redirectURI = pathname.split("/");

@@ -37,7 +37,7 @@ const calResilience = (steps, deep = false) => {
             cacheMultiResilience.reduce((acc, cur) => acc * cur, 1) /
             cacheMultiResilience.reduce((acc, cur) => acc + cur, 0);
 
-    console.log(totalResilience, deep);
+    // console.log(totalResilience, deep);
 
     return totalResilience;
 };
