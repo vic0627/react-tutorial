@@ -2,11 +2,19 @@
     display: block;
     min-width: 50px;
     max-width: 167px;
-    outline: 1px solid red;
+    position: relative;
+    // outline: 1px solid red;
 
     .vic_text__label {
-        outline: 1px solid red;
+        // outline: 1px solid red;
         width: auto;
+    }
+
+    .vic_text__icon {
+        font-size: var(--h5);
+        position: absolute;
+        bottom: 3.2px;
+        right: 3.2px;
     }
 
     .vic_text__input {
@@ -19,7 +27,18 @@
             color: var(--main);
         }
 
-        &:focus {
+        &:focus {}
+
+    }
+
+    &.test_fail {
+        .vic_text__icon {
+            color: var(--red-6);
+        }
+
+        .vic_text__input {
+            border-color: var(--red-6);
+            color: var(--red-6);
         }
     }
 }
